@@ -37,6 +37,7 @@
 
 body {
   line-height: 1.5;
+  background-color: var(--white--97);
 }
 
 img,
@@ -93,6 +94,7 @@ h6 {
   font-size: clamp(14px, 1vw, 18px);
   background-color: var(--orange--50);
   border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .btn--white {
@@ -166,6 +168,7 @@ h6 {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  margin-bottom: 150px;
   gap: 100px;
 }
 
@@ -276,6 +279,88 @@ h6 {
   color: var(--white);
   border: 4px solid hsla(0, 0%, 100%, 0.3);
 }
+
+/* <<<<<<<<<<<<<<<<<<<< BENEFITS >>>>>>>>>>>>>>>>>>>> */
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 80px
+}
+
+.benefits__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 300px;
+}
+
+.benefits__title__left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.benefits__title__left h2 {
+  color: var(--grey--15);
+  font-weight: 600;
+  font-size: clamp(28px, 2.7vw, 48px);
+}
+
+.benefits__title__left p {
+  color: var(--grey--35);
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 20px;
+}
+
+.benefits__grid__card {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  background-color: var(--white);
+}
+
+.benefits__grid__card .number {
+  align-self: flex-end;
+  font-weight: 700;
+  color: var(--grey--15);
+  font-size: clamp(50px, 5vw, 80px);
+}
+
+.benefits__grid__card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.benefits__grid__card__info h3 {
+  color: var(--grey--20);
+  font-weight: 600;
+  font-size: clamp(20px, 1.5vw, 24px);
+}
+
+.benefits__grid__card__info p {
+  color: var(--grey--30);
+  font-size: clamp(14px, 1vw, 18px);
+}
+
+.benefits__grid__card .icon {
+  font-size: 24px;
+  padding: 20px;
+  color: var(--orange--50);
+  border-radius: 8px;
+  background-color: var(--white--99);
+  box-shadow: inset 0 0 0 1px var(--white--95);
+  align-self: flex-end;
+  font-weight: bold;
+}
+
 /* <<<<<<<<<<<<<<<<<<<< MEDIA QUERIES >>>>>>>>>>>>>>>>>>>> */
 
 @media (width <= 1440px) {
