@@ -113,7 +113,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 300px;
+  gap: clamp(100px, 20vw, 300px);
 }
 
 .title__left {
@@ -787,6 +787,17 @@ h6 {
   .footer__info {
     flex-direction: column;
     gap: 100px;
+  }
+
+  .footer__info__right {
+    gap: 0;
+  }
+}
+
+@media (width <= 800px) {
+  .faq .container {
+    flex-direction: column;
+    gap: 60px;
   }
 }
 
