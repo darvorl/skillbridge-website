@@ -3,26 +3,26 @@
   font-family: "Be Vietnam Pro", sans-serif;
   --white: #fff;
   --black: #000;
-  --grey--10: #1A1A1A;
-  --grey--15: #262626 ;
-  --grey--20: #333333 ;
-  --grey--30: #4C4C4D ;
-  --grey--35: #59595A ;
-  --grey--40: #656567 ;
-  --grey--60: #98989A ;
-  --grey--70: #B3B3B3 ;
-  --orange--50: #FF9500;
-  --orange--70: #FFBF66;
-  --orange--75: #FFCA80;
-  --orange--80: #FFD599;
-  --orange--90: #FFEACC;
-  --orange--95: #FFF4E5;
-  --orange--97: #FFF9F0;
-  --orange--99: #FFFDFA;
-  --white--90: #E4E4E7;
-  --white--95: #F1F1F3;
-  --white--97: #F7F7F8;
-  --white--99: #FCFCFD;
+  --grey--10: #1a1a1a;
+  --grey--15: #262626;
+  --grey--20: #333333;
+  --grey--30: #4c4c4d;
+  --grey--35: #59595a;
+  --grey--40: #656567;
+  --grey--60: #98989a;
+  --grey--70: #b3b3b3;
+  --orange--50: #ff9500;
+  --orange--70: #ffbf66;
+  --orange--75: #ffca80;
+  --orange--80: #ffd599;
+  --orange--90: #ffeacc;
+  --orange--95: #fff4e5;
+  --orange--97: #fff9f0;
+  --orange--99: #fffdfa;
+  --white--90: #e4e4e7;
+  --white--95: #f1f1f3;
+  --white--97: #f7f7f8;
+  --white--99: #fcfcfd;
 }
 
 /* <<<<<<<<<<<<<<<<<<<< CSS RESETS >>>>>>>>>>>>>>>>>>>> */
@@ -95,12 +95,43 @@ h6 {
   background-color: var(--orange--50);
   border-radius: 8px;
   flex-shrink: 0;
+  text-align: center;
 }
 
 .btn--white {
   background-color: var(--white);
   box-shadow: inset 0 0 0 1px var(--white--90);
   color: var(--grey--15);
+}
+
+.btn--grey {
+  background-color: var(--white--97);
+  box-shadow: inset 0 0 0 1px var(--white--95);
+  color: var(--grey--15);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 300px;
+}
+
+.title__left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title__left h2 {
+  color: var(--grey--15);
+  font-weight: 600;
+  font-size: clamp(28px, 2.7vw, 48px);
+}
+
+.title__left p {
+  color: var(--grey--35);
+  font-size: clamp(14px, 1vw, 18px);
 }
 
 /* <<<<<<<<<<<<<<<<<<<< STYLES >>>>>>>>>>>>>>>>>>>> */
@@ -195,7 +226,7 @@ h6 {
   box-shadow: inset 0 0 0 1px var(--white--95);
   gap: 10px;
   color: var(--grey--10);
-  font-size: clamp(16px , 2.6vw, 48px);
+  font-size: clamp(16px, 2.6vw, 48px);
   font-weight: 600;
   justify-content: center;
 }
@@ -284,31 +315,8 @@ h6 {
 .benefits {
   display: flex;
   flex-direction: column;
-  gap: 80px
-}
-
-.benefits__title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 300px;
-}
-
-.benefits__title__left {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.benefits__title__left h2 {
-  color: var(--grey--15);
-  font-weight: 600;
-  font-size: clamp(28px, 2.7vw, 48px);
-}
-
-.benefits__title__left p {
-  color: var(--grey--35);
-  font-size: clamp(14px, 1vw, 18px);
+  gap: 80px;
+  margin-bottom: 100px;
 }
 
 .benefits__grid {
@@ -359,6 +367,81 @@ h6 {
   box-shadow: inset 0 0 0 1px var(--white--95);
   align-self: flex-end;
   font-weight: bold;
+}
+
+/* <<<<<<<<<<<<<<<<<<<< OUR COURSES >>>>>>>>>>>>>>>>>>>> */
+.courses {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.courses__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  gap: 30px;
+}
+
+.courses__grid__card {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 30px;
+  border-radius: 12px;
+  background-color: var(--white);
+}
+
+.courses__grid__card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.courses__grid__card__info__text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.courses__grid__card__info__text__top {
+  display: flex;
+  align-items: center;
+}
+
+.courses__grid__card__info__text__top .tag:nth-child(2) {
+  margin-left: 10px;
+}
+
+.courses__grid__card__info__text__top .tag {
+  font-size: clamp(14px, 1vw, 18px);
+  color: var(--grey--30);
+  border-radius: 8px;
+  padding: 10px 16px;
+  box-shadow: inset 0 0 0 1px var(--white--95);
+}
+
+.courses__grid__card__info__text__top p {
+  font-size: clamp(16px, 1vw, 20px);
+  color: var(--grey--15);
+  margin-left: auto;
+}
+
+.courses__grid__card__info__text__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.courses__grid__card__info__text__info h3 {
+  font-size: clamp(20px, 1.5vw, 24px);
+  color: var(--grey--15);
+  font-weight: 600;
+}
+
+.courses__grid__card__info__text__info p {
+  color: var(--grey--30);
+  font-size: clamp(14px, 1vw, 18px);
 }
 
 /* <<<<<<<<<<<<<<<<<<<< MEDIA QUERIES >>>>>>>>>>>>>>>>>>>> */
