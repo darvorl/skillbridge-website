@@ -444,6 +444,54 @@ h6 {
   font-size: clamp(14px, 1vw, 18px);
 }
 
+/* <<<<<<<<<<<<<<<<<<<< TESTIMONIALS >>>>>>>>>>>>>>>>>>>> */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  gap: 30px;
+}
+
+.testimonials__grid__card {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.testimonials__grid__card > p {
+  font-size: clamp(14px, 1vw, 18px);
+  color: var(--grey--30);
+  padding: 50px;
+}
+
+.testimonials__grid__card .line {
+  height: 1px;
+  width: auto;
+  background-color: var(--white--95);
+}
+
+.testimonials__grid__card__bottom {
+  display: flex;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.testimonials__grid__card__bottom p {
+  font-size: clamp(14px, 1vw, 18px);
+  color: var(--grey--20);
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.testimonials__grid__card__bottom .btn {
+  margin-left: auto;
+}
+
 /* <<<<<<<<<<<<<<<<<<<< MEDIA QUERIES >>>>>>>>>>>>>>>>>>>> */
 
 @media (width <= 1440px) {
