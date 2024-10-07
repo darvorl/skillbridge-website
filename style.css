@@ -193,6 +193,10 @@ h6 {
   color: var(--grey--15);
 }
 
+.header__navbar .icon {
+  display: none;
+}
+
 /* <<<<<<<<<<<<<<<<<<<< HERO >>>>>>>>>>>>>>>>>>>> */
 .hero {
   display: flex;
@@ -213,9 +217,11 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .hero__main__info h1 {
+  width: fit-content;
   position: relative;
   display: flex;
   align-items: center;
@@ -232,7 +238,7 @@ h6 {
 
 .hero__main__info h1 img {
   position: absolute;
-  width: 39px;
+  width: clamp(10px, 6vw, 39px);
   top: -26px;
   left: -26px;
 }
@@ -284,6 +290,7 @@ h6 {
 .hero__brands img {
   padding: clamp(10px, 1.7vw, 30px) clamp(15px, 2.3vw, 40px);
   width: clamp(62px, 12vw, 220px);
+  min-width: 100px;
 }
 
 .hero__brands .line {
@@ -361,8 +368,8 @@ h6 {
 }
 
 .benefits__grid__card .icon {
-  font-size: 24px;
-  padding: 20px;
+  font-size: clamp(14px, 2vw, 24px);
+  padding: clamp(16px, 1.5vw, 20px);
   color: var(--orange--50);
   border-radius: 8px;
   background-color: var(--white--99);
@@ -573,7 +580,7 @@ h6 {
   gap: 20px;
 }
 
-.pricing__grid__card__perks__info ul li a {
+.pricing__grid__card__perks__info ul li {
   display: flex;
   align-items: center;
   padding: 14px;
@@ -583,7 +590,7 @@ h6 {
   color: var(--grey--30);
 }
 
-.pricing__grid__card__perks__info ul li a .icon {
+.pricing__grid__card__perks__info ul li .icon {
   border-radius: 6px;
   padding: clamp(6px, 1vw, 12px);
   background-color: var(--orange--95);
@@ -591,6 +598,7 @@ h6 {
   font-size: 16px;
   align-items: center;
   justify-content: center;
+  cursor: default;
 }
 
 .pricing__grid__card__perks__info ul li a .block {
@@ -731,7 +739,7 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  min-width: 250px;
+  min-width: clamp(20px, 25vw, 250px);
 }
 
 .footer__info__right__col h4 {
@@ -795,14 +803,113 @@ h6 {
 }
 
 @media (width <= 800px) {
+  .title {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .header__navbar__links ul {
+    display: none;
+  }
+
+  .header__navbar__cta {
+    margin-left: auto;
+  }
+
+  .header__navbar .icon {
+    display: block;
+    margin-left: 20px;
+    transform: scaleX(-1);
+    font-size: 24px;
+    padding: 6px;
+  }
+
+  .hero__video .icon {
+    font-size: 20px;
+  }
+
+  .courses__grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .testimonials__grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .pricing__grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
   .faq .container {
     flex-direction: column;
     gap: 60px;
   }
+
+  .footer {
+    padding: 60px 30px 30px 30px;
+  }
+
+  .footer__info {
+    gap: 60px;
+  }
 }
 
-@media (width <= 390px) {
-  .btn {
-    padding: 14px 20px;
+@media (width <= 600px) {
+  .header {
+    padding-inline: 16px;
+  }
+
+  .header__top {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .hero__main__info h1 {
+    padding: 14px;
+  }
+
+  .pricing__grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .pricing__grid__card {
+    padding: 20px;
+  }
+
+  .pricing__grid__card__perks__info {
+    padding: 20px 0;
+  }
+
+  .faq__flex__card {
+    padding: 20px 30px;
+  }
+
+  .footer__info__right {
+    flex-direction: column;
+    gap: 28px;
+  }
+}
+
+@media (width <= 500px) {
+  .hero__main__info h1 img {
+    top: -8px;
+    left: -6px;
+  }
+
+  .benefits__grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .courses__grid__card__info__text__top p {
+    margin: 20px 0 0 16px;
+  }
+
+  .courses__grid__card__info__text__top .tag:nth-child(2) {
+    margin-right: 40px;
+  }
+
+  .courses__grid__card__info__text__top {
+    flex-wrap: wrap;
   }
 }
