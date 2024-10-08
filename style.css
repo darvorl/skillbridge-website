@@ -95,6 +95,11 @@ h6 {
   border-radius: 8px;
   flex-shrink: 0;
   text-align: center;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  scale: 0.95;
 }
 
 .btn--white {
@@ -131,6 +136,10 @@ h6 {
 .title__left p {
   color: var(--grey--35);
   font-size: clamp(14px, 1vw, 18px);
+}
+
+.header__navbar__links ul a:hover {
+  color: var(--orange--50);
 }
 
 /* <<<<<<<<<<<<<<<<<<<< STYLES >>>>>>>>>>>>>>>>>>>> */
@@ -179,7 +188,7 @@ h6 {
   display: flex;
   font-size: clamp(14px, 1vw, 18px);
   color: var(--grey--15);
-  gap: 26px;
+  gap: 60px;
 }
 
 .header__navbar__cta {
@@ -191,6 +200,10 @@ h6 {
 .header__navbar__cta a:first-child {
   font-size: clamp(14px, 1vw, 18px);
   color: var(--grey--15);
+}
+
+.header__navbar__cta a:first-child:hover {
+  color: var(--orange--50);
 }
 
 .header__navbar .icon {
@@ -249,6 +262,11 @@ h6 {
   border-radius: 6px;
   background-color: var(--orange--95);
   color: var(--grey--15);
+  transition: 0.4s;
+}
+
+.hero__main__info h1 .icon:hover {
+  scale: 0.9;
 }
 
 .hero__main__info h1 span {
@@ -279,17 +297,34 @@ h6 {
 }
 
 .hero__brands {
-  display: flex;
   padding: 30px;
-  justify-content: space-between;
   overflow: hidden;
   background-color: var(--white--99);
   box-shadow: inset 0 0 0 1px var(--white--95);
+  width: auto;
+  position: relative;
+}
+
+.hero__brands .slider {
+  
+ 
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(250px * 14);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 3));
+  }
 }
 
 .hero__brands img {
   padding: clamp(10px, 1.7vw, 30px) clamp(15px, 2.3vw, 40px);
-  width: clamp(62px, 12vw, 220px);
+  width: clamp(62px, 12vw, 250px);
   min-width: 100px;
 }
 
@@ -556,6 +591,11 @@ h6 {
   width: 100%;
 }
 
+.pricing__grid__card__perks .btn:hover {
+  scale: 1;
+  background-color: hsl(35, 100%, 60%);
+}
+
 .pricing__grid__card__perks__info {
   padding: 40px;
   background-color: var(--white);
@@ -800,21 +840,9 @@ h6 {
   .footer__info__right {
     gap: 0;
   }
-}
-
-@media (width <= 800px) {
-  .title {
-    flex-direction: column;
-    gap: 30px;
-    align-items: flex-start;
-  }
 
   .header__navbar__links ul {
     display: none;
-  }
-
-  .header__navbar__cta {
-    margin-left: auto;
   }
 
   .header__navbar .icon {
@@ -824,6 +852,20 @@ h6 {
     font-size: 24px;
     padding: 6px;
   }
+
+  .header__navbar__cta {
+    margin-left: auto;
+  }
+}
+
+@media (width <= 800px) {
+  .title {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  
 
   .hero__video .icon {
     font-size: 20px;
@@ -903,6 +945,10 @@ h6 {
 
   .courses__grid__card__info__text__top p {
     margin: 20px 0 0 16px;
+  }
+
+  .testimonials__grid__card__bottom img {
+    width: clamp(40px, 6vw, 50px);
   }
 
   .courses__grid__card__info__text__top .tag:nth-child(2) {
