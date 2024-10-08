@@ -149,6 +149,7 @@ h6 {
   max-width: 1900px;
   padding-inline: 30px;
   margin-inline: auto;
+  position: relative;
 }
 
 .header__top {
@@ -306,12 +307,47 @@ h6 {
 }
 
 .hero__brands .slider {
-  
- 
   display: flex;
   animation: scroll 40s linear infinite;
-  width: calc(250px * 14);
+  width: calc(250px * 21);
 }
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.header__navbar__mobile {
+  position: absolute;
+  top: -20px;
+  right: 0px;
+  background-color: var(--orange--70);
+  z-index: 1;
+  height: 100vh;
+  flex-direction: column;
+  width: 300px;
+  gap: 20px;
+}
+
+.header__navbar__mobile li {
+  padding: 16px 24px;
+  color: var(--white--99);
+  transition: 0.4s;
+}
+
+.header__navbar__mobile li .close-icon {
+  padding: 0;
+  font-size: 20px;
+  display: flex;
+}
+
+.header__navbar__mobile li:hover {
+  background-color: var(--orange--50);
+}
+
 
 @keyframes scroll {
   0% {
